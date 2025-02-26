@@ -24,4 +24,8 @@ class Film extends Model
     public function critics(){
         return $this->hasMany('App\Models\Critic');
     }
+
+    public function actors(){
+        return $this->belongsToMany('App\Models\Actor'); 
+    }
 }
