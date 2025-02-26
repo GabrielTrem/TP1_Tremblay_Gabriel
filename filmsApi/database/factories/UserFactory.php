@@ -9,6 +9,9 @@ use Illuminate\Support\Str;
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\User>
  */
+
+use Faker\Factory as Faker;
+
 class UserFactory extends Factory
 {
     /**
@@ -23,12 +26,13 @@ class UserFactory extends Factory
      */
     public function definition(): array
     {
+        $faker = Faker::create();
         return [
-            'name' => fake()->name(),
-            'email' => fake()->unique()->safeEmail(),
-            'email_verified_at' => now(),
-            'password' => static::$password ??= Hash::make('password'),
-            'remember_token' => Str::random(10),
+            'login' =>$faker->userName(),
+            'password' =>$faker->password(),
+            'email' =>$faker->email(),
+            'last_name' =>$faker->lastName(),
+            'first_name' =>$faker->firstName($gender = null)
         ];
     }
 
