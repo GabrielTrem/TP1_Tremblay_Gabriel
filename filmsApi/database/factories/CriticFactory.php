@@ -25,7 +25,7 @@ class CriticFactory extends Factory
         return [
             'film_id'=>Film::all()->random()->id, //trouver sur https://stackoverflow.com/questions/44102483/in-laravel-how-do-i-retrieve-a-random-user-id-from-the-users-table-for-model-fa
             'score' =>$faker->randomFloat(1, 0, 10),
-            'comment' =>$faker->pragraph(2)
+            'comment' =>$faker->paragraph(2)
         ];
     }
 }
