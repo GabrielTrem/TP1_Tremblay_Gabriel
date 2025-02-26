@@ -16,4 +16,8 @@ class Critic extends Model
     public function user(){
         return $this->belongsTo('App\Models\User');
     }
+
+    public function film(){
+        return $this->belongsTo('App\Models\Film');
+    }
 }
