@@ -6,5 +6,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class Language extends Model
 {
-    //
+    protected $fillable = [
+        'name'
+    ];
+
+    public function films(){
+        return $this->hasMany('App\Models\Film');
+    }
 }
