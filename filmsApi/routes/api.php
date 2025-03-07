@@ -14,5 +14,5 @@ Route::get('films/{id}/average-score', 'App\Http\Controllers\FilmCriticControlle
 // Route::put('users/{id}', 'App\Http\Controllers\UserController@update');
 // Route::get('users/{id}/favorite-language', 'App\Http\Controllers\UserLanguageController@favoriteLanguage');
 
-// Route::destroy('critics/{id}', 'App\Http\Controllers\CriticController@destroy');
+Route::delete('critics/{id}', 'App\Http\Controllers\CriticController@destroy');
 
