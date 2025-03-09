@@ -13,11 +13,10 @@ class FilmCriticController extends Controller
     {
         try{
             $film = Film::findOrFail($film_id);
+
             return response()->json([
-                'film' => array_merge(
-                    (new FilmResource($film))->toArray(request()),
-                    ['critics' => CriticResource::collection($film->critics)]
-                )
+                'film' => new FilmResource($film),
+                'critics' => CriticResource::collection($film->critics)
             ], OK);
         }
         catch(QueryException $ex){
@@ -39,8 +38,8 @@ class FilmCriticController extends Controller
                 'film_id' => $film->id,
                 'average_score' => $averageScore,
             ], OK);
-
-        } catch(QueryException $ex){
+        } 
+        catch(QueryException $ex){
             abort(NOT_FOUND, "Not Found");
         }
         catch(Exception $ex){
