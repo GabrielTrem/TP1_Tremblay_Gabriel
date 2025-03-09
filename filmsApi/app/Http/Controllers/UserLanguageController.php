@@ -10,6 +10,7 @@ use App\Http\Resources\LanguageResource;
 
 class UserLanguageController extends Controller
 {
+    //inspirer de https://stackoverflow.com/questions/13223512/how-to-select-count-with-laravels-fluent-query-builder
     public function favoriteLanguage(string $user_id)
     {
         try{

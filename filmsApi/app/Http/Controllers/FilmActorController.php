@@ -12,7 +12,7 @@ class FilmActorController extends Controller
     {
         try{
             $film = Film::findOrFail($film_id);
-            return ActorResource::collection($film->actors()->get())->response()->setStatusCode(200);
+            return ActorResource::collection($film->actors)->response()->setStatusCode(200);
         }
         catch(QueryException $ex){
             abort(404, "Invalid Id");
